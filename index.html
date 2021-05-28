@@ -25,6 +25,14 @@
     color: grey;
     margin: 0;
   }
+  /* ---------------------------- MOBILE ---------------------------- */
+
+@media only screen and (max-width:620px) {
+
+  body {
+    font-size: 25px;
+  }
+}
   </style>
   <script>
     /* ---------------------------- CLOCK ---------------------------- */
@@ -53,11 +61,11 @@
 </head>
 
 <body onload="currentTime()">
-  <p id="clock" style="margin: 0;font-size:26vw;text-align:;"></p><br>
+  <p id="clock" style="margin: 0;font-size:25vw;text-align:center;"></p><br>
 → <a href="https://spendingti.me/drawing/">spendingti.me/drawing/</a>
 <p id="comingsoon">→ spendingti.me/drawing-dots/ (coming soon)<br>
 → spendingti.me/swimming/ (coming soon)</p>
-<p style="font-size:15px;position:fixed;bottom:10px;right:20px;;">This is a directory by <a href="http://kirstenspruit.com/">Kirsten Spruit</a>, re: spending time.
+<p style="font-size:15px;position:fixed;bottom:0;padding-right:10px;">This is a directory by <a href="http://kirstenspruit.com/">Kirsten Spruit</a> re: spending time.
 </body>
 
 <script>
@@ -67,7 +75,7 @@ if (t < 7) {
     document.body.style.backgroundColor="#000";
     document.body.style.color="#fff";
 } else if (t < 18) {
-    document.write("☀");
+    document.write("☼");
     document.body.style.backgroundColor="#fff";
     document.body.style.color="#000";
 } else {
