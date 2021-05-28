@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Drawing Club</title>
+  <link href="style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.1.5/angular-resource.min.js"></script>
+  <script src="https://code.angularjs.org/1.1.5/angular-sanitize.min.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+  <div ng-app="arenaApp">
+    <div class="container" ng-controller="channelShow">
+
+
+      <div class="content">
+        <h1 class="header">{{channel.title}}</h1>
+        <h1 ng-if="channel.metadata.description">{{channel.metadata.description}}</h1>
+      </div>
+
+      <div class="alldrawings">
+        <!-- Channel contents loop -->
+        <div ng-repeat="block in channel.contents">
+
+          <div class="drawing">
+            <h4 ng-if="block.title" class="add-bottom">
+              {{block.title}}
+            </h4>
+
+            <div ng-if="block.class == 'Image'">
+              <img src="{{block.image.display.url}}" alt="{{block.title}}" class="scale-with-grid">
+              <figcaption ng-bind-html-unsafe="block.content_html"> </figcaption>
+            </div>
+          </div>
+        </div>
+        <!-- End Channel contents loop -->
+      </div>
+
+      <footer>
+        <h1>(click <a href="https://www.are.na/benjamin-earl/drawing-club-f50tum7k7ko">here</a> for more drawings / to join the club)</h1>
+      </footer>
+
+      <script type="text/javascript">
+        var app = angular.module('arenaApp', ['ngResource', 'ngSanitize']);
+
+        app.controller('channelShow', function($scope, $resource) {
+          var Channel = $resource('https://api.are.na/v2/channels/:slug');
+
+          var channel = Channel.get({
+            slug: 'drawing-club-f50tum7k7ko',
+            sort: 'position',
+            direction: 'desc'
+          }, function() {
+            $scope.channel = channel;
+          });
+        })
+      </script>
+    </div>
+
+</body>
+
+</html>
