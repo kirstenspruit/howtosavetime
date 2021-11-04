@@ -6,7 +6,7 @@ body {
   font-family: monospace;
 }
 
-p, h1 {
+p, h1, li {
   margin: 0;
   padding: 10px;
   font-weight: normal;
