@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>A place to gather our things</title>
+  <link href="style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.angularjs.org/1.1.5/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.5/angular-resource.min.js"></script>
+  <script src="http://code.angularjs.org/1.1.5/angular-sanitize.min.js"></script>
+</head>
+
+<body>
+  <div class="bag">
+    <div class="pocket">
+      <h1>A place to gather our things</h1>
+    </div>
+    <div class="pocket">
+      <a href="https://radiostasis.live/STAGING-STASIS-Kirsten-Meghan">Why?</a>
+    </div>
+    <br>
+    <div class="pocket">
+      <p>Listen to Meghan</p>
+      <audio controls>
+        <source src="https://s4.radio.co/s8540faf3a/listen" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="pocket">
+      <p>Listen to Kirsten</p>
+      <audio controls>
+        <source src="https://radio.goodtimesbadtimes.club/radio/8070/radio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="pocket">
+      <script id="cid0020000297003395807" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 250px;height: 350px;">{"handle":"carrierbag","arch":"js","styles":{"a":"993399","c":"ffffff","d":"ffffff","f":0,"g":"ffffff","i":0,"j":"ffffff","k":"bbbbbb","l":"bbbbbb","m":"CC0000","n":"FFFFFF","p":"10","q":"ffffff","cnrs":"0.37"}}</script>
+    </div>
+    <div ng-app="arenaApp">
+      <div class="container" ng-controller="channelShow">
+
+        <div>
+          <!-- Channel contents loop -->
+          <div class="pocket" ng-repeat="block in channel.contents">
+
+            <div class="lint">
+              <p ng-if="block.title" class="add-bottom">
+                {{block.title}}
+                <span ng-if="block.class == 'Link'">
+                  <a href="{{block.source.url}}" title="{{block.title}}">↳</a>
+                </span>
+                <span ng-if="block.class == 'Attachment'">
+                  | <a href="{{block.source.url}}" title="{{block.title}}">Download</a>
+                </span>
+              </p>
+
+              <div ng-if="block.class == 'Image'">
+                <figure>
+                  <div class="seven columns add-bottom">
+                    <img src="{{block.image.display.url}}" alt="{{block.title}}" class="scale-with-grid">
+                  </div>
+                  <div class="seven columns">
+                    <figcaption ng-bind-html-unsafe="block.content_html"> </figcaption>
+                  </div>
+                </figure>
+              </div>
+
+              <div ng-if="block.class == 'Attachment'">
+                <img src="{{block.image.display.url}}" alt="{{block.title}}" class="scale-with-grid add-bottom">
+              </div>
+
+              <div ng-if="block.class == 'Text'" ng-bind-html-unsafe="block.content_html">
+              </div>
+
+              <div ng-if="block.class == 'Media'">
+                <div ng-bind-html-unsafe="block.embed.html"></div>
+                <figcaption ng-bind-html-unsafe="block.content_html">
+                  </figcaption>
+              </div>
+
+              <div ng-if="block.class == 'Channel'">
+                <h5 class="channel"><a href="#{{block.slug}}" title="">{{block.title}}</a></h5>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Channel contents loop -->
+        </div>
+        <script type="text/javascript">
+          var app = angular.module('arenaApp', ['ngResource', 'ngSanitize']);
+
+          app.controller('channelShow', function($scope, $resource) {
+            var Channel = $resource('https://api.are.na/v2/channels/:slug');
+
+            var channel = Channel.get({
+              slug: 'listening-gathering-weaving-undoing',
+              direction: 'desc'
+            }, function() {
+              $scope.channel = channel;
+            });
+          })
+        </script>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+
+</html>
