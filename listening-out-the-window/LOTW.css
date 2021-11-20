@@ -1,0 +1,38 @@
+body {
+  background-color: #bed0ed;
+  font: #fff;
+  font-family: sans-serif;
+}
+#raam {
+  height: calc(100vh - 40px);
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+table, tr, th {
+  table-layout: fixed ;
+  border: 1px solid;
+  border-color: #fff;
+  border-collapse: collapse;
+  color: #fff;
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  vertical-align: top;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+  align: center;
+}
+
+p {
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
