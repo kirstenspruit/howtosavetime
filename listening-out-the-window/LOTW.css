@@ -20,6 +20,14 @@ body {
   height: 300px;
 }
 
+#mobile {
+  display: none;
+  color: white;
+}
+#mobile a {
+  text-decoration: underline;
+}
+
 #vensterbank {
   display: inline-block;
   width: auto;
@@ -58,4 +66,18 @@ p {
 
 audio {
   padding: 10px;
+}
+
+/* ---------------------------- MOBILE ---------------------------- */
+@media only screen and (max-width:720px) {
+
+  /* For mobile phones: */
+  #mobile {
+    display: contents;
+  }
+  #chat {
+    display: none;
+    padding: 10px;
+    height: auto
+  }
 }
