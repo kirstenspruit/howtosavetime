@@ -41,12 +41,24 @@ a, a:visited {
   font-weight: normal;
   font-size: inherit;
   text-align: left;
-  color: #00f;
+  color: #fff;
   text-decoration: none;
 }
 
 a:hover {
+  color: #0f0;
+}
+
+#nav a {
+  top: calc(100vh - 100px);
+  position: fixed;
+  width: calc(100vw - 100px);
+  float: right;
+  text-align: right;
   color: #fff;
+}
+#nav a:hover {
+  color: #0f0;
 }
 
 #empty-space {
