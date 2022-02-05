@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Essaying</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- A root element for TypeIt to target. -->
+  <span id="myElement"></span>
+
+  <!-- The script itself, loaded AFTER your root element. -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+  <script>
+    new TypeIt("#myElement", {
+        speed: 100
+      })
+      .pause(3000)
+      .type("INT. STUDIO SPACE - DAY.")
+      .pause(3000)
+      .type("<br><br>")
+      .pause(3000)
+      .type("PROTAGONIST (28, blue jacket and socks) sits behind their desk and stares out the window.")
+      .pause(1000)
+      .type("<br><br><br>")
+      .pause(3000)
+      .type("<h2>PROTAGONIST (V.O.)</h2><br>")
+      .pause(500)
+      .type("<h3>Where was I?<br>(pause)</h3><br><br>")
+      .pause(3000)
+      .type("Protagonist starts typing on a MacBook.<br><br><br>")
+      .pause(1000)
+      .type("<h2>PROTAGONIST (V.O.)<h2><br>")
+      .pause(500)
+      .type("<h3>I am not entirely sure where to start.</h3>")
+      .pause(1000)
+      .type("<h3> It’s also not as if I’m only starting now;</h3>")
+      .pause(500)
+      .type("<h3> I have started many times,</h3>")
+      .pause(500)
+      .type("<h3> written many words.</h3>")
+      .pause(1000)
+      .type("<h3> Still it feels like I am starting now.</h3>")
+      .pause(1000)
+      .type("<br><br>")
+      .pause(3000)
+      .type("Protagonist picks up a book ")
+      .pause(500)
+      .type("– the cover reads The Scent of Time - Byung-Chul Han.")
+      .pause(1000)
+      .type(" They flick through the pages, in search of something.")
+      .pause(1000)
+      .type("<br><br><h4>CUT TO:</h4>")
+      .type("<br>CLOSE UP ON QUOTE IN BOOK →")
+      .go();
+  </script>
+<a href="https://spendingti.me/reading/the-scent-of-time/index.html#p0-the-feeling-that">⬤</a>
+</body>
+
+</html>

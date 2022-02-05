@@ -1,0 +1,54 @@
+body {
+  font-family: courier new;
+  background-color: #00f;
+  color: #fff;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+h2 {
+  font-family: courier new;
+  font-weight: normal;
+  font-size: inherit;
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  font-family: courier new;
+  font-weight: normal;
+  font-size: inherit;
+  text-align: left;
+  padding-left: 150px;
+  padding-right: 150px;
+  margin: 0;
+}
+
+h4 {
+  font-family: courier new;
+  font-weight: normal;
+  font-size: inherit;
+  text-align: right;
+  margin: 0;
+}
+
+a, a:visited {
+  font-family: courier new;
+  font-weight: normal;
+  font-size: inherit;
+  text-align: left;
+  color: #00f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#empty-space {
+  height: 100vh;
+}
