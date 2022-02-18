@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Preface</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  body {
+    background-color: black;
+    font-family: sans-serif;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    line-height: 1.2em;
+    margin: 20px;
+  }
+  .content {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+  }
+  h2 {
+    font-size: 20px;
+    text-align: left;
+    color: white;
+    font-weight: normal;
+  }
+  a, a:visited {
+    color: #00f;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #0f0;
+  }
+
+  .quote {
+    font-family: serif;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 1.2em;
+
+  }
+  mark {
+    background-color: white;
+    color: black;
+  }
+
+  </style>
+</head>
+
+<body>
+<div class="content">
+<h1>Preface</h1>
+<hr>
+<div class="quote">
+<p><mark>This book was written in good faith, reader. It warns you from the outset that in it, I have proposed to myself no other than a domestic and private end. I have had no consideration at all either to your service or to my glory. My powers are inadequate for such a purpose. [...] If I had written to seek the world's favour, I should have bedecked myself better, and should present myself in a studied posture. I want to be seen here in my simple, natural, ordinary fashion, without the straining or artifice; for it is myself that I portray. Thus, reader, I myself am the matter of my book: there’s no reason that you should employ your leisure upon so frivolous and vain a subject. Therefore farewell. Montaigne, this first day of March, fifteen hundred and eighty.</mark></p>
+</div>
+<small>Michel de Montaigne – Essais</small><br><br>
+
+<span id="myElement"></span>
+
+<!-- The script itself, loaded AFTER your root element. -->
+<script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+<script>
+  new TypeIt("#myElement", {
+      speed: 100
+    })
+    .pause(1000)
+    .go();
+</script>
+
+</div>
+</body>
+
+</html>
