@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Sorry for my late reply</title>
+</head>
+
+<style>
+  html {
+    margin: 30px;
+  }
+  body {
+    font-family: serif;
+    background-color: beige;
+    color: black;
+    font-size: 30px;
+    max-width: 1000px;
+    margin: auto;
+
+  }
+  h1 {
+    font-size: 50px;
+    font-weight: normal;
+    font-style: italic;
+  }
+  .date {
+    text-align: right;
+  }
+
+  mark {
+    color: lightgrey;
+    background: none;
+  }
+</style>
+
+<body>
+  <h1>Late Replies To A Young Poet</h1>
+  <nav>
+    <button href="#" onclick="show('1');">1</button>
+    <button href="#" onclick="show('2');">2</button>
+    <button href="#" onclick="show('3');">3</button>
+    <button href="#" onclick="show('4');">4</button>
+    <button href="#" onclick="show('5');">5</button>
+    <button href="#" onclick="show('6');">6</button>
+    <button href="#" onclick="show('7');">7</button>
+  </nav>
+  <br>
+  <div id="1">
+    <p class="date">Paris, 17 February 1903</p>
+    <p>Dear Sir,
+      <br><br>
+      Your letter only reached me a few days ago. <mark>Let me thank you…</mark>
+  </div>
+
+  <div id="2" style="display: none;">
+    <p class="date">Viareggio near Pisa (Italy), 5 april 1903</p>
+
+<p>You must forgive me, my dear Sir, for only attending to your letter of 24 February today: the whole time I have been under the weather, not ill exactly but oppressed by an influenza-like feebleness which has made me incapable of anything. And in the end, when all else had failed, I travelled down to this southern coast, whose beneficial effects have helped me in the past. But I’m still not well again, writing is difficult, and so you must take these few lines as if there were more of them. <mark>First of all you should know…</mark></p>
+  </div>
+
+  <div id="3" style="display: none;">
+    <p class="date">At present in Worpswede near Bremen, 16 July 1903</p>
+
+    <p>About ten days ago I left Paris, ailing and very weary, and travelled to these great northern plains whose vastness and quiet and sky are supposed to return my health to me. But I drove into unceasing rain which only today beginning to clear a bit over the restless, windswept land; and I’m using this first moment of brightness to send you a greeting, my dear Sir.<br><br>
+    	My dear Mr Kappus: I have left your letter unanswered for a long time — not that I had forgotten it; on the contrary, it was the kind of letter one reads again, coming across it among one’s papers, and I recognized you in it as if I were in your presence. It was your letter of the second of May — I’m sure you remember it. When, as I do now, I read it in the great calm of these expanses, I am touched by your fine concern for life, even  more than I was in Paris where everything has a different tone and gets lost in the immense din which sets things trembling. <mark>Here, surrounded as I am…</mark></p>
+  </div>
+
+  <div id="4" style="display: none;">
+    <p class="date">Rome, 29 October 1903</p>
+
+    <p>My dear Sir,
+
+    Your letter of 29 August reached me in Florence, and only now — two months on — do I give you news of it. Forgive me this delay, but I prefer not to write letters when I’m travelling because letter-writing requires more of me than just the basic wherewithal: some quiet and time on my own and a moment when I feel relatively at home. <mark>We arrived in Rome about six weeks ago…</mark></p>
+  </div>
+
+  <div id="5" style="display: none;">
+    <p class="date">Rome, 14 May 1904</p>
+
+    <p>My dear Mr Kappus,
+
+    Much time has gone past since I received your last letter. Don’t hold it against me; first it was work, then disruptions and finally ill-health that kept me from replying, whereas I wanted to write to you out of good, peaceful days. Now I feel a little better again (even here the beginning of spring with its bad and fickle transitions was hard to bear) and can manage to send you greetings, dear Mr Kappus, and (as I am very glad to do) say this and that about your letter, as best I can. <mark>You will see…</mark></p>
+  </div>
+
+  <div id="6" style="display: none;">
+    <p class="date">Furuborg, Jonsered, Sweden, 4 November 1904</p>
+
+    <p>My dear Mr Kappus,
+
+    During this time that has passed without a letter I was partly travelling and partly too busy to be able to write. And even today writing is not going to be easy because I have had to write a good number of letters already and my hand is tired. If I had someone to dictate to I’d have plenty to say, but as it is you’ll have to make do with just a few words in return for your long letter. <mark>I think of you often…</mark></p>
+  </div>
+
+  <div id="7" style="display: none;">
+    <p class="date">Paris, on the second day of Christmas 1908</p>
+
+    <p>You ought to know, dear Mr Kappus, how happy I was to get this lovely letter from you. The news you give me, actual and articulate as it now is, seems good to me, and the more I thought about it the more it struck me as incontrovertibly good. I really wanted to write you this in time for Christmas Eve; but what with the work that has been occupying me variously and without interruption this winter the old festival came up so quickly that I hardly had time enough to make the most necessary purchases, much less to write a letter. <mark>But during these Christmas days…</mark></p>
+  </div>
+</body>
+
+<script type="text/javascript">
+  var divs = ["1", "2", "3", "4", "5", "6", "7"];
+  var visibleId = null;
+
+  function show(id) {
+    if (visibleId !== id) {
+      visibleId = id;
+    }
+    hide();
+  }
+
+  function hide() {
+    var div, i, id;
+    for (i = 0; i < divs.length; i++) {
+      id = divs[i];
+      div = document.getElementById(id);
+      if (visibleId === id) {
+        div.style.display = "block";
+      } else {
+        div.style.display = "none";
+      }
+    }
+  }
+</script>
