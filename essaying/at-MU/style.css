@@ -1,0 +1,77 @@
+html {
+  font-size: 3vw;
+}
+
+body {
+  font-family: serif;
+  background-color: #00f;
+  color: #111;
+  letter-spacing: 0.02rem;
+  line-height: 1.2;
+}
+
+main {
+  margin: 1rem;
+  max-width: ;
+}
+
+
+
+.date {
+  font-family: sans-serif;
+  color: blue;
+  font-size: 0.5rem;
+}
+
+
+a, a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+a:hover {
+  color: #0f0;
+}
+
+button {
+  font-size: 0.5rem;
+}
+
+#still1, #moving1,
+#still2,
+#still3, #moving3,
+#still4,
+#still5,
+#still6,
+#still7,
+#still8,
+#still9,
+#still10,
+#still11,
+#still12,
+#still13,
+#still14,
+#still15,
+#still16,
+#still17,
+#still18,
+#still19,
+#still20,
+#still21,
+#still22,
+#still23,
+#still24,
+#still25,
+#still26,
+#still27, #moving27,
+#still28,
+#moving29 {
+  display: none;
+}
+
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 24px;
+  }
+}
