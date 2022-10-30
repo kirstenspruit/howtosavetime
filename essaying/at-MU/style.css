@@ -35,6 +35,11 @@ a:hover {
 
 button {
   font-size: 0.5rem;
+  color: #111;
+}
+
+img, iframe {
+  max-width: 100%;
 }
 
 #still1, #moving1,
@@ -73,5 +78,11 @@ button {
 @media only screen and (max-width: 800px) {
   html {
     font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 20px;
   }
 }
