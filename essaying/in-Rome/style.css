@@ -1,0 +1,214 @@
+html {
+  font-size: 3vw;
+}
+
+body {
+  font-family: serif;
+  background-color: white;
+  color: #111;
+  letter-spacing: 0.02rem;
+  line-height: 1.2;
+}
+
+main {
+  margin: 1rem;
+  max-width: ;
+}
+
+
+
+.date {
+  font-family: Helvetica, sans-serif;
+  color: black;
+  font-size: 0.8rem;
+}
+
+a, a:visited {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+.desktop a, .source a, sup a {
+  border-bottom: none;
+}
+
+
+a:hover {
+  color: blue;
+}
+
+button {
+  font-size: 0.5rem;
+  color: #111;
+}
+
+img, iframe {
+  max-width: 100%;
+}
+
+body {
+  margin: 1rem;
+}
+main {
+  margin: 0;
+}
+
+#text1,
+#text2,
+#text3,
+#text4,
+#text5,
+#text6,
+#text7,
+#text8,
+#text9,
+#text10,
+#text11,
+#text12,
+#text13,
+#text14,
+#text15,
+#text16,
+#text17,
+#text18,
+#text19,
+#text20,
+#text21,
+#text22,
+#text23,
+#text24,
+#text25,
+#text26,
+#text27,
+#text28,
+#text29 {
+  display: none;
+}
+
+sup {
+  font-family: Helvetica, sans-serif;
+  color: blue;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+
+.desktop{
+  position: relative;
+  width: calc(100vw - 2rem);
+  min-height: calc(65vw - 2rem);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: auto;
+}
+#footnote__1 {
+  min-height: calc(153vw - 2rem);
+}
+.source{
+  position: relative;
+}
+
+.number {
+  font-size: 2rem;
+  margin-right: 1rem;
+  font-family: Helvetica, sans-serif;
+}
+.desktop .date{
+  color: black;
+}
+.video__container{
+  position: absolute;
+}
+.video {
+  background-color: black;
+}
+
+#footnote__1 .video__container{
+  right: 0;
+  top: 0;
+}
+#footnote__1 .video {
+  height: 100vw;
+  width: calc((100vw / 16) * 9);
+  margin-bottom: 0.3rem;
+}
+#footnote__1 .subtitle {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+#footnote__7 .video__container {
+  left: 0;
+  top: 0;
+}
+#footnote__7 .video{
+  width: 70vw;
+  height: calc((70vw / 16) * 9);
+  margin-bottom: 0.3rem;
+}
+#footnote__7 .number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+}
+#footnote__7 .subtitle {
+  position:absolute;
+  bottom: 0;
+  right: 0;
+} 
+
+#footnote__9 .video__container {
+  right: 0;
+  bottom: 0;
+}
+#footnote__9 .video {
+  width: 30vw;
+  height: 30vw;
+  margin-top: 0.3rem;
+}
+#footnote__9 .subtitle {
+  position:absolute;
+  bottom: 0;
+  left: 0;
+}
+
+video {
+  width: 100%;
+}
+
+small {
+  font-size: 0.5rem;
+  letter-spacing: 0.5px;
+  color: gainsboro;
+}
+small .date {
+  font-size: 0.8em;
+}
+
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 24px;
+  }
+  .desktop {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 20px;
+  }
+  .desktop, .source {
+    font-size: 3vw;
+    letter-spacing: 0.1px;
+  }
+  .desktop .date {
+    font-size: 3vw;
+  }
+  .number {
+    font-size: 5vw;
+  }
+}
