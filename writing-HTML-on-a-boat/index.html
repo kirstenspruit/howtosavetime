@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+:root {
+    --base: 20px;
+    --sliderSize: calc(100vh - calc(var(--base) * 4));
+    --slideWidth: calc(100vw - (2 * var(--base)));
+    --move: calc(var(--slideWidth) - var(--sliderSize) - calc(var(--base) * 2));
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+main {
+    padding: var(--base);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: calc(100vh - (2 * var(--base)));
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50vw;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--sliderSize);
+  max-height: calc(var(--slideWidth) - calc(var(--base) * 2));
+  width: var(--sliderSize);
+  max-width: calc(var(--slideWidth) - calc(var(--base) * 2));
+  left: var(--base);
+  bottom: var(--base);
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+#water {
+   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+
+input:checked + .slider {
+  background-color: #6FF206;
+}
+
+input:checked + .slider #water {
+  display: block;
+}
+
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #6FF206;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(var(--move));
+  -ms-transform: translateX(var(--move));
+  transform: translateX(var(--move));
+}
+
+h1 {
+    margin: 0;
+    position: fixed;
+    top: var(--base);
+    left: var(--base);
+    font-weight: normal;
+    font-family: sans-serif;
+    letter-spacing: 0.05rem;
+    color: white;
+    mix-blend-mode: difference;
+    font-size: var(--base);
+    z-index: 999;
+}
+
+@media only screen and (max-width: 768px) {
+    input:checked + .slider:before {
+  -webkit-transform: translateY(var(--move));
+  -ms-transform: translateY(var(--move));
+  transform: translateY(var(--move));
+}
+.slider:before {
+  left: var(--base);
+  bottom: var(--base);
+}
+}
+
+
+</style>
+</head>
+<body>
+
+
+<main>
+    <h1>Boatmode</h1>
+    <label class="switch">
+        <input type="checkbox">
+        <div class="slider round">
+            <video autoplay muted loop id="water">
+                <source src="IMG_4179.MOV" type="video/mp4">
+            </video>
+            <script> document.getElementById('water').play(); </script>
+        </div>
+    </label>
+    
+</main>
+
+
+
+</body>
+</html> 
