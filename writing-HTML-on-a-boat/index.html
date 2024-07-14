@@ -72,7 +72,6 @@ main {
 }
 
 #water {
-  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -83,12 +82,16 @@ main {
   z-index: -1;
 }
 
+.toggle {
+  opacity: 0;
+}
+
 
 input:checked + .slider {
   background-color: #6FF206;
 }
 
-input:checked + .slider #water {
+input:checked + .slider .toggle {
   opacity: 1;
 }
 
@@ -139,23 +142,23 @@ footer {
 </head>
 <body>
 
-<header>
-  <h1>Boat mode</h1>
-</header>
 <main>
     <label class="switch">
         <input type="checkbox">
         <div class="slider round">
-            <video autoplay muted loop playsinline crossorigin id="water">
+            <header class="toggle">
+              <h1>Boat mode</h1>
+            </header>
+            <video autoplay muted loop playsinline crossorigin id="water" class="toggle">
                 <source src="IMG_4179.MOV" type="video/mp4">
             </video>
+            <footer class="toggle">
+              Made on the Rotte during <a href="https://html.energy/freewrites/2024-07-13-rotterdam/index.html" target="_blank">HTML Energy 2024: Rotterdam</a> (13.07.2024)
+            </footer> 
             <script> document.getElementById('water').play(); </script>
         </div>
     </label>  
-</main>
-<footer>
-  Made on the Rotte during <a href="https://html.energy/freewrites/2024-07-13-rotterdam/index.html" target="_blank">HTML Energy 2024: Rotterdam</a> (13.07.2024)
-</footer>  
+</main> 
 
 <script>
 window.addEventListener('resize', () => {
