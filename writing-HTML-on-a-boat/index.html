@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Boat mode</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
 :root {
     --base: 20px;
-    --sliderSize: calc(100vh - calc(var(--base) * 4));
+    --fullvh: calc(var(--vh, 1vh) * 100);
+    --sliderSize: calc(var(--fullvh) - calc(var(--base) * 4));
     --slideWidth: calc(100vw - (2 * var(--base)));
     --move: calc(var(--slideWidth) - var(--sliderSize) - calc(var(--base) * 2));
+}
+
+html {
+  font-size: var(--base);
 }
 body {
     width: 100vw;
     height: 100vh;
+    height: var(--fullvh);
     margin: 0;
     background-color: white;
+    font-family: sans-serif;
+  letter-spacing: 0.05rem;
 }
 main {
     padding: var(--base);
@@ -25,6 +34,7 @@ main {
   display: inline-block;
   width: 100%;
   height: calc(100vh - (2 * var(--base)));
+  height: calc(var(--fullvh) - (2 * var(--base)));
 }
 
 .switch input { 
@@ -62,14 +72,14 @@ main {
 }
 
 #water {
-   display: none;
+  opacity: 0;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: var(--fullvh);
   z-index: -1;
 }
 
@@ -79,7 +89,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider #water {
-  display: block;
+  opacity: 1;
 }
 
 
@@ -93,18 +103,23 @@ input:checked + .slider:before {
   transform: translateX(var(--move));
 }
 
+header {
+  position: fixed;
+  top: var(--base);
+  left: var(--base);
+  z-index: 999;
+}
 h1 {
-    margin: 0;
-    position: fixed;
-    top: var(--base);
-    left: var(--base);
-    font-weight: normal;
-    font-family: sans-serif;
-    letter-spacing: 0.05rem;
-    color: white;
-    mix-blend-mode: difference;
-    font-size: var(--base);
-    z-index: 999;
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+footer {
+  position: fixed;
+  left: var(--base);
+  bottom: var(--base);
+  font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -124,22 +139,30 @@ h1 {
 </head>
 <body>
 
-
+<header>
+  <h1>Boat mode</h1>
+</header>
 <main>
-    <h1>Boatmode</h1>
     <label class="switch">
         <input type="checkbox">
         <div class="slider round">
-            <video autoplay muted loop id="water">
+            <video autoplay muted loop playsinline crossorigin id="water">
                 <source src="IMG_4179.MOV" type="video/mp4">
             </video>
             <script> document.getElementById('water').play(); </script>
         </div>
-    </label>
-    
+    </label>  
 </main>
+<footer>
+  Made on the Rotte during <a href="https://html.energy/freewrites/2024-07-13-rotterdam/index.html" target="_blank">HTML Energy 2024: Rotterdam</a> (13.07.2024)
+</footer>  
 
-
+<script>
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+</script>
 
 </body>
 </html> 
